@@ -1,15 +1,14 @@
-from PyQt5.QtWidgets import (QMainWindow, QTextEdit, QWidget, QInputDialog,
-                             QAction, QFileDialog, QApplication, QLineEdit,
+import sys
+from os import walk
+from pathlib import Path
+
+from PIL import Image, UnidentifiedImageError
+from PyQt5.QtCore import QObject, pyqtSignal
+from PyQt5.QtGui import QIcon, QTextCursor
+from PyQt5.QtWidgets import (QMainWindow, QTextEdit, QWidget, QAction, QLineEdit,
                              QFileDialog, QHBoxLayout, QVBoxLayout, QPushButton, QLabel,
                              )
-from PyQt5.QtGui import QIcon, QTextCursor
-from PyQt5.QtCore import QObject, pyqtSignal
-import sys
-from pathlib import Path
-from os import listdir, getcwd, walk, makedirs
-from os.path import isfile, join, splitext
-from PIL import Image, UnidentifiedImageError
-from pyautogui import locateOnScreen, screenshot, locate
+from pyautogui import locate
 
 
 class Stream(QObject):
